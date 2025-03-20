@@ -33,6 +33,10 @@ class ModelFamily:
     CLAUDE_3_5_HAIKU = "claude-3.5-haiku"
     CLAUDE_3_5_SONNET = "claude-3.5-sonnet"
     CLAUDE_3_7_SONNET = "claude-3.7-sonnet"
+    #TODO: 
+    OLLAMA_DEEPSEEK_R1 = "ollama-deepseek-r1"
+    OLLAMA_LLAMA_3_3 = "ollama-llama-3.3"
+    OLLAMA_PHI_4 = "ollama-phi4"
     UNKNOWN = "unknown"
 
     ANY: TypeAlias = Literal[
@@ -56,6 +60,15 @@ class ModelFamily:
     def __new__(cls, *args: Any, **kwargs: Any) -> ModelFamily:
         raise TypeError(f"{cls.__name__} is a namespace class and cannot be instantiated.")
 
+    @staticmethod
+    def is_ollama(family: str) -> bool:
+        return family in (
+            #TODO:
+            ModelFamily.OLLAMA_DEEPSEEK_R1,
+            ModelFamily.OLLAMA_LLAMA_3_3,
+            ModelFamily.OLLAMA_PHI_4,
+        )
+        
     @staticmethod
     def is_claude(family: str) -> bool:
         return family in (

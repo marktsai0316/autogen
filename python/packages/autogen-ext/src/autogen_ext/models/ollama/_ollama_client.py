@@ -545,7 +545,7 @@ class BaseOllamaChatCompletionClient(ChatCompletionClient):
             if self._resolved_model != result.model:
                 warnings.warn(
                     f"Resolved model mismatch: {self._resolved_model} != {result.model}. "
-                    "Model mapping in autogen_ext.models.openai may be incorrect.",
+                    "Model mapping in autogen_ext.models.ollama may be incorrect.",
                     stacklevel=2,
                 )
 

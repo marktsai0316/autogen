@@ -223,6 +223,13 @@ _MODEL_INFO: Dict[str, ModelInfo] = {
         "family": ModelFamily.UNKNOWN,
         "structured_output": True,
     },
+    "phi4-mini": {
+        "vision": False,
+        "function_calling": False,
+        "json_output": True,
+        "family": ModelFamily.UNKNOWN,
+        "structured_output": True,
+    },
     "phi4": {
         "vision": False,
         "function_calling": False,
@@ -343,6 +350,7 @@ _MODEL_TOKEN_LIMITS: Dict[str, int] = {
     "phi": 2048,
     "phi3": 131072,
     "phi3.5": 131072,
+    "phi4-mini": 16384,
     "phi4": 16384,
     "qwen": 32768,
     "qwen2": 32768,
